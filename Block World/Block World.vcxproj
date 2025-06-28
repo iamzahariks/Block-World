@@ -102,12 +102,17 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>SFML_DYNAMIC;DEBUG_CONSOLE;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\SFML-3.0.0\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SFML-3.0.0\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-window-d.lib;sfml-system-d.lib;sfml-graphics-d.lib;sfml-audio-d.lib</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -116,18 +121,40 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>
+      </PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>..\SFML-3.0.0\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SFML-3.0.0\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-window.lib;sfml-system.lib;sfml-graphics.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Block World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameFlow\Classes\Block\List\Stone.h" />
+    <ClInclude Include="GameFlow\Classes\Block\List\Dirt.h" />
+    <ClInclude Include="GameFlow\Classes\Block\List\Grass.h" />
+    <ClInclude Include="GameFlow\Classes\Block\Block.h" />
+    <ClInclude Include="GameFlow\Classes\Event\Event.h" />
+    <ClInclude Include="GameFlow\Classes\Init.h" />
+    <ClInclude Include="GameFlow\Classes\Interface\Interface.h" />
+    <ClInclude Include="GameFlow\Classes\Interface\List\Button.h" />
+    <ClInclude Include="GameFlow\Classes\Interface\List\Label.h" />
+    <ClInclude Include="GameFlow\Libraries.h" />
+    <ClInclude Include="GameFlow\Screen\Screen.h" />
+    <ClInclude Include="GameFlow\Services\Input\InputService.h" />
+    <ClInclude Include="GameFlow\Services\Input\Keyboard\KeyboardService.h" />
+    <ClInclude Include="GameFlow\Services\Input\Mouse\MouseService.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
