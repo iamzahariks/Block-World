@@ -3,6 +3,10 @@ private:
 	std::string id, name;
 	int breakLevel;
 	float breakTime;
+
+	sf::Texture *texture;
+	sf::Sprite *sprite;
+	sf::Vector2f position;
 public:
 	float GetTimeToDestroy(int userBreakLevel) {
 		if ((this->GetBreakLevel() == -1) || (this->GetBreakTime() == -1)) return -1.0;
@@ -10,6 +14,7 @@ public:
 		return  breakTime / (float)(userBreakLevel - this->GetBreakLevel() + 1);
 	}
 
+	// Block Information
 	std::string GetID() {
 		return this->id;
 	}
@@ -25,16 +30,38 @@ public:
 	float GetBreakTime() {
 		return this->breakTime;
 	}
+	//
 
-	Block Clone() {
-		Block newBlock{ this->GetID(), this->GetName(), this->GetBreakLevel(), this->GetBreakTime()};
-		return newBlock;
+	// Positions
+	void SetPosition(sf::Vector2f newPosition) {
+		this->position = newPosition;
+		this->sprite->setPosition(newPosition);
 	}
 
-	Block(std::string id, std::string name, int breakLevel, float breakTime) {
+	sf::Vector2f GetPosition() {
+		return this->position;
+	}
+	//
+
+	// Sprites
+	sf::Sprite* GetSprite() {
+		return this->sprite;
+	}
+
+	Block Clone() {
+		Block newBlock{ this->GetID(), this->GetName(), this->GetBreakLevel(), this->GetBreakTime(), this->texture};
+		return newBlock;
+	}
+	//
+
+	Block(std::string id, std::string name, int breakLevel, float breakTime, sf::Texture *texture) {
 		this->id = id;
 		this->name = name;
 		this->breakLevel = breakLevel;
 		this->breakTime = breakTime;
+
+		this->texture = texture;
+		this->sprite = new sf::Sprite(*this->texture);
+		this->sprite->setScale(sf::Vector2f(2.5f, 2.5f));
 	}
 };
