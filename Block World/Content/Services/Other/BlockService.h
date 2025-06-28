@@ -1,4 +1,4 @@
-namespace Blocks {
+namespace BlockService {
 	Block* GetBlockById(std::string id);
 	void AddBlockInList(std::string id, std::string name, int breakLevel, float breakTime);
 	bool BlockExist(std::string id);
