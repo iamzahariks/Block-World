@@ -3,24 +3,16 @@
 #include "GameFlow/Classes/Init.h"
 #include "GameFlow/Services/Input/InputService.h"
 
-void React(sf::Vector2i vect) {
-	std::cout << vect.x << ' ' << vect.y << '\n';
-}
-
-void F(void*) {
-	std::cout << "F" << std::endl;
-}
+// Launch Templates
+void Init();
+//
 
 int main() {
-	InputService::MouseService::EVENTS::MouseLeftClick.Connect(React);
-
-	Event<void*> *EventF = InputService::KeyboardService::GetKeyPressedEvent(sf::Keyboard::Key::F);
-	EventF->Connect(F);
-
-	while (true) {
-		InputService::Update();
-		sf::sleep(sf::milliseconds(10));
-	}
-	
+	Init();
+	std::cout << Blocks::GetBlockById("Grass")->GetTimeToDestroy(1) << std::endl;
 	return 0;
+}
+
+void Init() {
+	Blocks::Init();
 }
