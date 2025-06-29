@@ -141,6 +141,8 @@
     <ClCompile Include="Block World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameFlow\Services\MapService.h" />
+    <ClInclude Include="GameFlow\Services\WindowService.h" />
     <ClInclude Include="GameFlow\Classes\Block\List\Stone.h" />
     <ClInclude Include="GameFlow\Classes\Block\List\Dirt.h" />
     <ClInclude Include="GameFlow\Classes\Block\List\Grass.h" />
@@ -152,7 +154,6 @@
     <ClInclude Include="Content\Classes\Interface\List\Label.h" />
     <ClInclude Include="Content\Libraries.h" />
     <ClInclude Include="Content\RootInitializer.h" />
-    <ClInclude Include="GameFlow\Screen\Screen.h" />
     <ClInclude Include="Content\Services\Init.h" />
     <ClInclude Include="Content\Services\Input\InputService.h" />
     <ClInclude Include="Content\Services\Input\Keyboard\KeyboardService.h" />

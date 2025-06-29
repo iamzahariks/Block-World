@@ -6,7 +6,7 @@ private:
 
 	sf::Texture *texture;
 	sf::Sprite *sprite;
-	sf::Vector2f position;
+	sf::Vector2i worldPosition;
 public:
 	float GetTimeToDestroy(int userBreakLevel) {
 		if ((this->GetBreakLevel() == -1) || (this->GetBreakTime() == -1)) return -1.0;
@@ -33,13 +33,12 @@ public:
 	//
 
 	// Positions
-	void SetPosition(sf::Vector2f newPosition) {
-		this->position = newPosition;
-		this->sprite->setPosition(newPosition);
+	void SetWorldPosition(sf::Vector2i newPosition) {
+		this->worldPosition = newPosition;
 	}
 
-	sf::Vector2f GetPosition() {
-		return this->position;
+	sf::Vector2i GetWorldPosition() {
+		return this->worldPosition;
 	}
 	//
 

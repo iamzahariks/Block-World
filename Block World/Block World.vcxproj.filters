@@ -26,9 +26,6 @@
     <ClInclude Include="Content\Libraries.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="GameFlow\Screen\Screen.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Content\Services\Input\InputService.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -69,6 +66,12 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="GameFlow\RootInitializer.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFlow\Services\WindowService.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFlow\Services\MapService.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
