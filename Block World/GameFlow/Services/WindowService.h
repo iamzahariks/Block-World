@@ -12,6 +12,8 @@ namespace WindowService {
 	sf::Texture BACKGROUND_TEXTURE { "Content/Images/Background.png" };
 	sf::Sprite BACKGROUND_SPRITE { BACKGROUND_TEXTURE };
 
+	sf::FloatRect WINDOW_BOUNDS{ sf::Vector2f(0.f,0.f), GAME_WINDOW.getDefaultView().getSize() };
+
 	// Clear
 	void Clear() {
 		GAME_WINDOW.clear();
@@ -26,7 +28,7 @@ namespace WindowService {
 
 	sf::Vector2f ConvertWorldPositionToPixelPosition(sf::Vector2i worldPosition) {
 		sf::Vector2i worldSize = GetWorldSize();
-		return sf::Vector2f(worldPosition.x * BLOCK_SIZE, WINDOW_PIXEL_SIZE.y - worldPosition.y * BLOCK_SIZE - BLOCK_SIZE);
+		return sf::Vector2f(worldPosition.x * BLOCK_SIZE, WINDOW_PIXEL_SIZE.y - worldPosition.y * BLOCK_SIZE);
 	}
 
 	sf::Vector2i GetWorldPositionByPixelPosition(sf::Vector2f pixelPosition) {

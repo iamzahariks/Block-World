@@ -12,6 +12,17 @@ int main() {
 				WindowService::GAME_WINDOW.close();
 		}
 
+		if (!WindowService::GAME_WINDOW.hasFocus()) continue;
+
+		// Update Root Parts
+		MouseService::Update();
+		KeyboardService::Update();
+		//
+		
+		// Update Other Parts
+		GameFlow::SelectionService::Update();
+		//
+
 		WindowService::Clear();
 		WindowService::GAME_WINDOW.draw(WindowService::BACKGROUND_SPRITE);
 
@@ -21,6 +32,8 @@ int main() {
 			block.GetSprite()->setPosition(WindowService::ConvertWorldPositionToPixelPosition(block.GetWorldPosition()));
 			WindowService::GAME_WINDOW.draw(*block.GetSprite());
 		}
+
+		WindowService::GAME_WINDOW.draw(*GameFlow::SelectionService::GetSprite());
 
 		WindowService::Display();
 	}

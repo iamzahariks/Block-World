@@ -14,12 +14,12 @@ namespace MapService {
 		// Make Bedrock
 		for (int x = 0; x < WorldSize.x; x++) {
 			Block* bedrock = BlockService::GetBlockById("Bedrock");
-			AddBlock(bedrock, sf::Vector2i(x, 0));
+			AddBlock(bedrock, sf::Vector2i(x, 1));
 		}
 		//
 
 		//Make Stone
-		for (int y = 1; y <= 5; y++) {
+		for (int y = 2; y <= 5; y++) {
 			for (int x = 0; x < WorldSize.x; x++) {
 				Block* stone = BlockService::GetBlockById("Stone");
 				AddBlock(stone, sf::Vector2i(x, y));
@@ -59,16 +59,20 @@ namespace MapService {
 		if (!ignoreNeighboors) {
 			bool neighboorWasFounded = false;
 			for (int x = -1; x <= 1; x += 2) {
-				if (neighboorWasFounded) break;
-				for (int y = -1; y <= 1; y += 2) {
-					if (GetBlockByWorldPosition(sf::Vector2i(worldPosition.x + x, worldPosition.y + y)) != nullptr) {
-						neighboorWasFounded = true;
-						break;
-					}
+				if (GetBlockByWorldPosition(sf::Vector2i(worldPosition.x + x, worldPosition.y)) != nullptr) {
+					neighboorWasFounded = true;
+					break;
 				}
 			}
 
-			if (neighboorWasFounded) return false;
+			for (int y = -1; y <= 1; y += 2) {
+				if (GetBlockByWorldPosition(sf::Vector2i(worldPosition.x, worldPosition.y + y)) != nullptr) {
+					neighboorWasFounded = true;
+					break;
+				}
+			}
+
+			if (!neighboorWasFounded) return false;
 		}
 		//
 

@@ -43,7 +43,7 @@ namespace MouseService {
 
 		// Check Right
 		if (RightClicked() && (!CONSTS::RIGHT_WAS_CLICKED)) {
-			EVENTS::MouseLeftClick.Call(GetMousePosition());
+			EVENTS::MouseRightClick.Call(GetMousePosition());
 			CONSTS::RIGHT_WAS_CLICKED = true;
 		}
 		else if ((!RightClicked()) && (CONSTS::RIGHT_WAS_CLICKED)) {
@@ -53,7 +53,7 @@ namespace MouseService {
 
 		// Check Wheel Clicked
 		if (WheelClicked() && (!CONSTS::WHEEL_WAS_CLICKED)) {
-			EVENTS::MouseLeftClick.Call(GetMousePosition());
+			EVENTS::WheelClicked.Call(GetMousePosition());
 			CONSTS::WHEEL_WAS_CLICKED = true;
 		}
 		else if ((!WheelClicked()) && (CONSTS::WHEEL_WAS_CLICKED)) {
