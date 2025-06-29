@@ -141,6 +141,7 @@
     <ClCompile Include="Block World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameFlow\Services\DestructionService.h" />
     <ClInclude Include="GameFlow\Services\InterfaceService.h" />
     <ClInclude Include="GameFlow\Services\MapService.h" />
     <ClInclude Include="GameFlow\Services\SelectionService.h" />

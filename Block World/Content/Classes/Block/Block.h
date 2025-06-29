@@ -11,7 +11,7 @@ public:
 	float GetTimeToDestroy(int userBreakLevel) {
 		if ((this->GetBreakLevel() == -1) || (this->GetBreakTime() == -1)) return -1.0;
 		if (userBreakLevel < this->GetBreakLevel()) return -1.0;
-		return  breakTime / (float)(userBreakLevel - this->GetBreakLevel() + 1);
+		return this->breakTime / (float)(userBreakLevel - this->GetBreakLevel() + 1);
 	}
 
 	// Block Information

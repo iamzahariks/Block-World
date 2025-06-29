@@ -6,7 +6,14 @@ int main() {
 	Content::Init();
 	GameFlow::Init();
 
+	clock_t START_TIME = clock();
 	while (WindowService::GAME_WINDOW.isOpen()) {
+		// DELTA TIME
+		clock_t NOW_TIME = clock();
+		double dt = (double)(NOW_TIME - START_TIME) / CLOCKS_PER_SEC;
+		START_TIME = NOW_TIME;
+		//
+
 		while (const std::optional event = WindowService::GAME_WINDOW.pollEvent()) {
 			if (event->is<sf::Event::Closed>())
 				WindowService::GAME_WINDOW.close();
@@ -20,7 +27,7 @@ int main() {
 		//
 		
 		// Update Other Parts
-		GameFlow::SelectionService::Update();
+		GameFlow::Update(dt);
 		//
 
 		WindowService::Clear();
@@ -33,7 +40,12 @@ int main() {
 			WindowService::GAME_WINDOW.draw(*block.GetSprite());
 		}
 
-		WindowService::GAME_WINDOW.draw(*GameFlow::SelectionService::GetSprite());
+		if (GameFlow::DestructionService::GetDestructionSprite() != nullptr) {
+			WindowService::GAME_WINDOW.draw(*GameFlow::DestructionService::GetDestructionSprite());
+		}
+
+		WindowService::GAME_WINDOW.draw(*GameFlow::SelectionService::GetSelectionSprite());
+		WindowService::GAME_WINDOW.draw(WindowService::CURSORE);
 
 		WindowService::Display();
 	}

@@ -83,5 +83,8 @@
     <ClInclude Include="GameFlow\Services\VisualizerService.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="GameFlow\Services\DestructionService.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

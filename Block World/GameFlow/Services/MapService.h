@@ -82,10 +82,10 @@ namespace MapService {
 	bool RemoveBlockByWorldPosition(sf::Vector2i worldPosition) {
 		int countBlocks = CONSTS::BLOCKS.size();
 		for (int i = 0; i < countBlocks; i++) {
-			Block gettedBlock = CONSTS::BLOCKS.at(i);
+			Block *gettedBlock = &CONSTS::BLOCKS.at(i);
 
-			if ((gettedBlock.GetWorldPosition().x != worldPosition.x) ||
-				(gettedBlock.GetWorldPosition().y != worldPosition.y)) {
+			if ((gettedBlock->GetWorldPosition().x != worldPosition.x) ||
+				(gettedBlock->GetWorldPosition().y != worldPosition.y)) {
 				continue;
 			}
 
@@ -99,14 +99,14 @@ namespace MapService {
 	Block* GetBlockByWorldPosition(sf::Vector2i worldPosition) {
 		int countBlocks = CONSTS::BLOCKS.size();
 		for (int i = 0; i < countBlocks; i++) {
-			Block gettedBlock = CONSTS::BLOCKS.at(i);
+			Block *gettedBlock = &CONSTS::BLOCKS.at(i);
 
-			if ((gettedBlock.GetWorldPosition().x != worldPosition.x) ||
-				(gettedBlock.GetWorldPosition().y != worldPosition.y)) {
+			if ((gettedBlock->GetWorldPosition().x != worldPosition.x) ||
+				(gettedBlock->GetWorldPosition().y != worldPosition.y)) {
 				continue;
 			}
 
-			return &gettedBlock;
+			return gettedBlock;
 		}
 		return nullptr;
 	}

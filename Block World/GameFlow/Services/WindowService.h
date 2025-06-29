@@ -9,10 +9,25 @@ namespace WindowService {
 	sf::RenderWindow GAME_WINDOW(sf::VideoMode({ 1000, 800 }),
 		"Block World", sf::Style::Close);
 
+	// BACKGROUND
 	sf::Texture BACKGROUND_TEXTURE { "Content/Images/Background.png" };
-	sf::Sprite BACKGROUND_SPRITE { BACKGROUND_TEXTURE };
+	sf::Sprite BACKGROUND_SPRITE { BACKGROUND_TEXTURE };	
+	//
 
-	sf::FloatRect WINDOW_BOUNDS{ sf::Vector2f(0.f,0.f), GAME_WINDOW.getDefaultView().getSize() };
+	// CURSOR
+	sf::Texture CURSORE_TEXTURE{ "Content/Images/Cursor.png" };
+	sf::Sprite CURSORE{ CURSORE_TEXTURE };
+	//
+
+	void Init() {
+		GAME_WINDOW.setMouseCursorVisible(false);
+		CURSORE.setOrigin(sf::Vector2f(8.f, 8.f));
+	}
+
+	void Update(double dt) {
+		sf::Vector2i mousePos = sf::Mouse::getPosition(WindowService::GAME_WINDOW);
+		CURSORE.setPosition(sf::Vector2f{ (float)(mousePos.x),(float)(mousePos.y)});
+	}
 
 	// Clear
 	void Clear() {
