@@ -38,7 +38,7 @@ public:
 	}
 
 	sf::Vector2i GetWorldPosition() {
-		return this->worldPosition;
+		return this->worldPosition; 
 	}
 	//
 

@@ -6,9 +6,9 @@ namespace BlockService {
 	std::map<std::string, Block> storage;
 
 	void Init() {
-		AddBlockInList("Grass", "Grass", 0, 1.0, new sf::Texture{"Content/Classes/Block/Textures/Grass.png"});
-		AddBlockInList("Dirt", "Dirt", 0, 1.0, new sf::Texture{ "Content/Classes/Block/Textures/Dirt.png" });
-		AddBlockInList("Stone", "Stone", 0, 2.0, new sf::Texture{ "Content/Classes/Block/Textures/Stone.png" });
+		AddBlockInList("Grass", "Grass", 0, 0.5, new sf::Texture{"Content/Classes/Block/Textures/Grass.png"});
+		AddBlockInList("Dirt", "Dirt", 0, 0.25, new sf::Texture{ "Content/Classes/Block/Textures/Dirt.png" });
+		AddBlockInList("Stone", "Stone", 0, 1.0, new sf::Texture{ "Content/Classes/Block/Textures/Stone.png" });
 		AddBlockInList("Bedrock", "Bedrock", -1, 1.0, new sf::Texture{ "Content/Classes/Block/Textures/Bedrock.png" });
 	}
 

@@ -5,5 +5,6 @@
 namespace Content {
 	void Init() {
 		Services::BlockService::Init();
+		Services::ItemsService::Init();
 	}
 }

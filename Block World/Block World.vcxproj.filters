@@ -71,13 +71,19 @@
     <ClInclude Include="GameFlow\Services\SelectionService.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="GameFlow\Services\VisualizerService.h">
+    <ClInclude Include="GameFlow\Visualizer.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="GameFlow\Services\DestructionService.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Content\Classes\Items\Item.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Content\Services\Other\ItemsService.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="GameFlow\Services\SoundService.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

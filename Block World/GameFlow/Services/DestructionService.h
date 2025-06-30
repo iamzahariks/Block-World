@@ -44,7 +44,14 @@ namespace DestructionService {
 		VALUES::TIMER += dt;
 		if ((selectedBlock->GetTimeToDestroy(0) == -1) || VALUES::TIMER < selectedBlock->GetTimeToDestroy(0)) return;
 
+		Item* gettedItem = ItemsService::GetItemById(selectedBlock->GetID());
 		MapService::RemoveBlockByWorldPosition(selectedBlock->GetWorldPosition());
+		SoundService::PlayBlockDestroy();
+
+		if (gettedItem != nullptr) {
+			InventoryService::AddItem(gettedItem, 1);
+		}
+
 		VALUES::TIMER = 0;
 		VALUES::selectedBlock = nullptr;
 	}

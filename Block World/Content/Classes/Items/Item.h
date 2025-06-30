@@ -20,8 +20,8 @@ public:
 		return this->sprite;
 	}
 
-	Item Clone() {;
-		return Item{this->GetId(), this->GetName(), this->GetType(), this->texture};
+	Item* Clone() {;
+		return new Item( this->GetId(), this->GetName(), this->GetType(), this->texture );
 	}
 
 	Item(std::string id, std::string name, std::string type, sf::Texture *texture) {

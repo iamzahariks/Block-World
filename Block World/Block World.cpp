@@ -1,11 +1,13 @@
 ﻿#include <iostream>
 #include "Content/RootInitializer.h"
 #include "GameFlow/RootInitializer.h"
+#include "GameFlow/Visualizer.h"
 
 int main() {
 	Content::Init();
 	GameFlow::Init();
 
+	system("cls");
 	clock_t START_TIME = clock();
 	while (WindowService::GAME_WINDOW.isOpen()) {
 		// DELTA TIME
@@ -30,24 +32,9 @@ int main() {
 		GameFlow::Update(dt);
 		//
 
-		WindowService::Clear();
-		WindowService::GAME_WINDOW.draw(WindowService::BACKGROUND_SPRITE);
-
-		int countOfElements = MapService::CONSTS::BLOCKS.size();
-		for (int i = 0; i < countOfElements; i++) {
-			Block block = MapService::CONSTS::BLOCKS.at(i);
-			block.GetSprite()->setPosition(WindowService::ConvertWorldPositionToPixelPosition(block.GetWorldPosition()));
-			WindowService::GAME_WINDOW.draw(*block.GetSprite());
-		}
-
-		if (GameFlow::DestructionService::GetDestructionSprite() != nullptr) {
-			WindowService::GAME_WINDOW.draw(*GameFlow::DestructionService::GetDestructionSprite());
-		}
-
-		WindowService::GAME_WINDOW.draw(*GameFlow::SelectionService::GetSelectionSprite());
-		WindowService::GAME_WINDOW.draw(WindowService::CURSORE);
-
-		WindowService::Display();
+		// Visualize Interface
+		Visualizer::Visualize();
+		//
 	}
 
 	return 0;

@@ -77,6 +77,7 @@ namespace MapService {
 		//
 
 		CONSTS::BLOCKS.push_back(myBlock);
+		return true;
 	}
 
 	bool RemoveBlockByWorldPosition(sf::Vector2i worldPosition) {

@@ -128,7 +128,7 @@
       <AdditionalIncludeDirectories>..\SFML-3.0.0\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -142,11 +142,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Content\Classes\Items\Item.h" />
+    <ClInclude Include="Content\Services\Other\ItemsService.h" />
     <ClInclude Include="GameFlow\Services\DestructionService.h" />
     <ClInclude Include="GameFlow\Services\PlacementService.h" />
     <ClInclude Include="GameFlow\Services\MapService.h" />
     <ClInclude Include="GameFlow\Services\SelectionService.h" />
-    <ClInclude Include="GameFlow\Services\VisualizerService.h" />
+    <ClInclude Include="GameFlow\Services\SoundService.h" />
+    <ClInclude Include="GameFlow\Visualizer.h" />
     <ClInclude Include="GameFlow\Services\WindowService.h" />
     <ClInclude Include="GameFlow\Classes\Block\List\Stone.h" />
     <ClInclude Include="GameFlow\Classes\Block\List\Dirt.h" />
