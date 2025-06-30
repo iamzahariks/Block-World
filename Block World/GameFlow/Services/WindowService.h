@@ -6,6 +6,7 @@ namespace WindowService {
 	int BLOCK_SIZE = 40;
 	sf::Vector2i WINDOW_PIXEL_SIZE{ 1000, 800 };
 
+	sf::Image GAME_EXE_IMAGE{ "Content/Classes/Block/Textures/Grass.png" };
 	sf::RenderWindow GAME_WINDOW(sf::VideoMode({ 1000, 800 }),
 		"Block World", sf::Style::Close);
 
@@ -20,6 +21,7 @@ namespace WindowService {
 	//
 
 	void Init() {
+		GAME_WINDOW.setIcon(GAME_EXE_IMAGE);
 		GAME_WINDOW.setMouseCursorVisible(false);
 		CURSORE.setOrigin(sf::Vector2f(8.f, 8.f));
 	}
