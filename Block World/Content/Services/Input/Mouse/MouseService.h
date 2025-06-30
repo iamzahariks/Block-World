@@ -9,6 +9,7 @@ namespace MouseService {
 		Event<sf::Vector2i> MouseLeftClick;
 		Event<sf::Vector2i> MouseRightClick;
 		Event<sf::Vector2i> WheelClicked;
+		Event<int> WheelScrolled;
 	}
 
 	namespace CONSTS {

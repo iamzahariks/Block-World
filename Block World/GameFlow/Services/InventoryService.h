@@ -1,8 +1,19 @@
 namespace InventoryService {
 	void SetNextItem(int settedItem);
+	void ToNextItem();
+	void ToLastItem();
 	void SetItem1(void*) { SetNextItem(0); }
 	void SetItem2(void*) { SetNextItem(1); }
 	void SetItem3(void*) { SetNextItem(2); }
+
+	void Scroll(int delta) {
+		if (delta == 1) {
+			ToNextItem();
+		}
+		else {
+			ToLastItem();
+		}
+	}
 
 	namespace CLASSES {
 		class InventoryItem {
@@ -54,6 +65,8 @@ namespace InventoryService {
 		KeyboardService::GetKeyPressedEvent(sf::Keyboard::Key::Num1)->Connect(SetItem1);
 		KeyboardService::GetKeyPressedEvent(sf::Keyboard::Key::Num2)->Connect(SetItem2);
 		KeyboardService::GetKeyPressedEvent(sf::Keyboard::Key::Num3)->Connect(SetItem3);
+
+		MouseService::EVENTS::WheelScrolled.Connect(Scroll);
 	}
 
 	void SetNextItem(int settedItem) {

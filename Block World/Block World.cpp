@@ -19,6 +19,16 @@ int main() {
 		while (const std::optional event = WindowService::GAME_WINDOW.pollEvent()) {
 			if (event->is<sf::Event::Closed>())
 				WindowService::GAME_WINDOW.close();
+			else if (const auto* wheelScrolled = event->getIf<sf::Event::MouseWheelScrolled>()) {
+				if (WindowService::GAME_WINDOW.hasFocus()) {
+					if (wheelScrolled->delta == 1) {
+						MouseService::EVENTS::WheelScrolled.Call(1);
+					}
+					else {
+						MouseService::EVENTS::WheelScrolled.Call(-1);
+					}
+				}
+			}
 		}
 
 		if (!WindowService::GAME_WINDOW.hasFocus()) continue;
