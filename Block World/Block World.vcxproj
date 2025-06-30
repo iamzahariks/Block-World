@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -141,8 +141,9 @@
     <ClCompile Include="Block World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Content\Classes\Items\Item.h" />
     <ClInclude Include="GameFlow\Services\DestructionService.h" />
-    <ClInclude Include="GameFlow\Services\InterfaceService.h" />
+    <ClInclude Include="GameFlow\Services\PlacementService.h" />
     <ClInclude Include="GameFlow\Services\MapService.h" />
     <ClInclude Include="GameFlow\Services\SelectionService.h" />
     <ClInclude Include="GameFlow\Services\VisualizerService.h" />
@@ -153,9 +154,6 @@
     <ClInclude Include="Content\Classes\Block\Block.h" />
     <ClInclude Include="Content\Classes\Event\Event.h" />
     <ClInclude Include="Content\Classes\Init.h" />
-    <ClInclude Include="Content\Classes\Interface\Interface.h" />
-    <ClInclude Include="Content\Classes\Interface\List\Button.h" />
-    <ClInclude Include="Content\Classes\Interface\List\Label.h" />
     <ClInclude Include="Content\Libraries.h" />
     <ClInclude Include="Content\RootInitializer.h" />
     <ClInclude Include="Content\Services\Init.h" />

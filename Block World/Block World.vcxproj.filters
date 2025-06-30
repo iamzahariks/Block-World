@@ -20,9 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Content\Classes\Interface\Interface.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="Content\Libraries.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -36,12 +33,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Content\Classes\Event\Event.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Content\Classes\Interface\List\Label.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Content\Classes\Interface\List\Button.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Content\Classes\Block\Block.h">
@@ -74,7 +65,7 @@
     <ClInclude Include="GameFlow\Services\MapService.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="GameFlow\Services\InterfaceService.h">
+    <ClInclude Include="GameFlow\Services\PlacementService.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="GameFlow\Services\SelectionService.h">
@@ -84,6 +75,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="GameFlow\Services\DestructionService.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Content\Classes\Items\Item.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
